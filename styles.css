@@ -145,6 +145,12 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+.clock-chip small {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-variant-numeric: tabular-nums;
+}
+
 .hero-center {
   min-height: calc(100vh - 100px);
   display: flex;

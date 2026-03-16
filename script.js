@@ -55,6 +55,10 @@ const searchInput = document.getElementById("searchInput");
 const scrollNext = document.getElementById("scrollNext");
 const timeBeijing = document.getElementById("timeBeijing");
 const timeGmt = document.getElementById("timeGmt");
+const dateBeijing = document.getElementById("dateBeijing");
+const dateGmt = document.getElementById("dateGmt");
+
+const weekdayMap = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
 
 function renderLinks() {
   quickLinks.innerHTML = links
@@ -104,6 +108,35 @@ function updateTime() {
     ...formatOptions,
     timeZone: "Etc/GMT",
   });
+
+  const beijingDate = new Intl.DateTimeFormat("zh-CN", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    weekday: "short",
+  })
+    .formatToParts(now)
+    .reduce((accumulator, part) => {
+      accumulator[part.type] = part.value;
+      return accumulator;
+    }, {});
+
+  const gmtDate = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Etc/GMT",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    weekday: "short",
+  })
+    .formatToParts(now)
+    .reduce((accumulator, part) => {
+      accumulator[part.type] = part.value;
+      return accumulator;
+    }, {});
+
+  dateBeijing.textContent = `${beijingDate.year}/${beijingDate.month}/${beijingDate.day} ${beijingDate.weekday}`;
+  dateGmt.textContent = `${gmtDate.year}/${gmtDate.month}/${gmtDate.day} ${gmtDate.weekday}`;
 }
 
 renderLinks();
