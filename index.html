@@ -3,128 +3,98 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>kkioplkk | 个人网站</title>
+    <title>kkioplkk | Start Page</title>
     <meta
       name="description"
-      content="kkioplkk 的个人网站，展示个人介绍、项目经历、联系方式与未来计划。"
+      content="kkioplkk 的双屏个人导航页，包含常用入口、搜索框和个人工具实验室。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="hero">
-      <nav class="nav container">
-        <div class="logo">kkioplkk.top</div>
-        <div class="nav-links">
-          <a href="#about">关于我</a>
-          <a href="#projects">项目</a>
-          <a href="#contact">联系</a>
-        </div>
-      </nav>
+    <div class="bg-orb orb-blue"></div>
+    <div class="bg-orb orb-mint"></div>
+    <div class="bg-orb orb-gold"></div>
 
-      <div class="hero-content container">
-        <div>
-          <p class="eyebrow">PERSONAL WEBSITE</p>
-          <h1>你好，我是王钰翔。</h1>
-          <p class="hero-text">
-            这是我的个人网站。未来我会在这里持续更新我的学习笔记、项目作品、个人介绍以及联系方式。
+    <main class="snap-wrapper">
+      <section class="screen hero-screen" id="home">
+        <header class="topbar">
+          <div class="brand-mini">start page</div>
+          <div class="topbar-meta clocks">
+            <div class="clock-chip">
+              <span class="clock-label">北京时间 · UTC+08:00</span>
+              <strong id="timeBeijing">--:--</strong>
+            </div>
+            <div class="clock-chip">
+              <span class="clock-label">格林威治 · UTC+00:00</span>
+              <strong id="timeGmt">--:--</strong>
+            </div>
+          </div>
+        </header>
+
+        <div class="hero-center">
+          <p class="hero-kicker">Personal Hub</p>
+          <h1 class="hero-logo">kkioplkk</h1>
+          <p class="hero-subtitle">
+            简洁、顺手、带一点未来感的个人入口页。
           </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">联系我</a>
-            <a class="btn btn-secondary" href="#projects">查看项目</a>
-          </div>
-        </div>
-        <div class="hero-card">
-          <h2>网站内容规划</h2>
-          <ul>
-            <li>个人简介与技能</li>
-            <li>课程项目与作品集</li>
-            <li>博客 / 学习记录</li>
-            <li>邮箱、GitHub、社交链接</li>
-          </ul>
-        </div>
-      </div>
-    </header>
 
-    <main>
-      <section id="about" class="section container">
-        <div class="section-title">
-          <p>ABOUT</p>
-          <h2>关于我</h2>
+          <form class="search-shell" id="searchForm">
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="搜索内容，或直接输入网址"
+              autocomplete="off"
+            />
+            <button type="submit">打开</button>
+          </form>
+
+          <div class="quick-grid" id="quickLinks"></div>
         </div>
-        <div class="about-grid">
-          <div class="card">
-            <h3>个人介绍</h3>
-            <p>
-              我正在搭建自己的线上主页，希望用一个简洁、专业的网站来展示我的经历、能力和作品。
-            </p>
-          </div>
-          <div class="card">
-            <h3>当前方向</h3>
-            <p>
-              数据分析、课程项目整理、个人品牌展示，以及逐步加入博客和更多交互页面。
-            </p>
-          </div>
-          <div class="card">
-            <h3>后续计划</h3>
-            <p>
-              接下来可以继续补充真实项目、简历下载、英文版页面和留言表单。
-            </p>
-          </div>
-        </div>
+
+        <button class="scroll-hint" id="scrollNext" aria-label="滚动到下一屏">
+          <span></span>
+        </button>
       </section>
 
-      <section id="projects" class="section section-alt">
-        <div class="container">
-          <div class="section-title">
-            <p>PROJECTS</p>
-            <h2>精选内容</h2>
-          </div>
-          <div class="projects-grid">
-            <article class="project-card">
-              <span class="tag">作品集</span>
-              <h3>课程项目整理</h3>
-              <p>把课程中的分析、报告、演示文稿统一整理，作为公开展示的项目案例。</p>
-            </article>
-            <article class="project-card">
-              <span class="tag">博客</span>
-              <h3>学习笔记发布</h3>
-              <p>记录自己在数据分析、建模、可视化和工具使用上的学习过程。</p>
-            </article>
-            <article class="project-card">
-              <span class="tag">个人品牌</span>
-              <h3>专属域名主页</h3>
-              <p>把你已经购买的域名接入网站，让别人可以直接访问你的个人主页。</p>
-            </article>
-          </div>
+      <section class="screen tools-screen" id="tools">
+        <div class="tools-header">
+          <p class="section-kicker">My Tools</p>
+          <h2>个人项目与工具入口</h2>
+          <p class="section-text">
+            这里放你之后自己开发的小工具、实验页面和内部入口。当前先保留为可扩展结构。
+          </p>
         </div>
-      </section>
 
-      <section id="contact" class="section container">
-        <div class="section-title">
-          <p>CONTACT</p>
-          <h2>联系我</h2>
-        </div>
-        <div class="contact-card">
-          <p>你可以把这里改成自己的真实联系方式。</p>
-          <ul>
-            <li>邮箱：2788150368@qq.com</li>
-            <li>域名：kkioplkk.top</li>
-            <li>GitHub：待补充</li>
-          </ul>
+        <div class="tools-grid">
+          <a class="tool-tile primary" href="https://github.com/kkioplkg/personal-site" target="_blank" rel="noreferrer">
+            <span class="tile-label">Repository</span>
+            <strong>本站源码</strong>
+            <small>当前 GitHub Pages 部署入口</small>
+          </a>
+          <div class="tool-tile">
+            <span class="tile-label">Coming Soon</span>
+            <strong>个人工具 01</strong>
+            <small>预留给你之后自己的小工具项目</small>
+          </div>
+          <div class="tool-tile">
+            <span class="tile-label">Coming Soon</span>
+            <strong>个人工具 02</strong>
+            <small>未来可迁移到独立页面或服务器应用</small>
+          </div>
+          <div class="tool-tile">
+            <span class="tile-label">Ideas</span>
+            <strong>实验室入口</strong>
+            <small>翻译、课表、自动化、效率工具都可以放这里</small>
+          </div>
         </div>
       </section>
     </main>
-
-    <footer class="site-footer container">
-      <p>© <span id="year"></span> kkioplkk.top</p>
-      <button id="backToTop" class="back-to-top" type="button">回到顶部 ↑</button>
-    </footer>
 
     <script src="script.js"></script>
   </body>
