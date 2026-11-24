@@ -1,0 +1,13 @@
+{
+  "name": "我们的故事",
+  "short_name": "我们的故事",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0d1a",
+  "theme_color": "#0b0d1a",
+  "icons": [
+    { "src": "icon-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "icon-510.png", "sizes": "510x510", "type": "image/png" }
+  ]
+}
